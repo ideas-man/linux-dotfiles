@@ -1,0 +1,72 @@
+# mute
+#SINK=$(pactl list short sinks | grep RUNNING | sed 's/\s.*//');\
+#pactl set-sink-mute "$SINK" toggle
+XF86AudioMute
+	pamixer -t
+
+# toggle mic
+XF86AudioMicMute
+	pactl set-source-mute 6 toggle
+
+# vol up
+#SINK=$(pactl list short sinks | grep RUNNING | sed 's/\s.*//');\
+#pactl set-sink-volume "$SINK" +5%
+XF86AudioRaiseVolume
+	pamixer -i 5
+
+# vol down
+#SINK=$(pactl list short sinks | grep RUNNING | sed 's/\s.*//');\
+#pactl set-sink-volume "$SINK" -5%
+XF86AudioLowerVolume
+	pamixer -d 5
+
+# vol up
+button6
+	pamixer -i 1
+
+# vol down
+button7
+	pamixer -d 1
+
+# screen backlight +5%
+XF86MonBrightnessUp
+	xbacklight -inc 5
+
+# screen backlight -5%
+XF86MonBrightnessDown
+	xbacklight -dec 5
+
+# passmenu
+XF86Tools
+	passmenu
+
+# printscreen
+Print
+	maim -s | xclip -selection clipboard -t image/png
+
+# lock screen
+super+l
+	slock
+
+# toggle bt
+XF86Bluetooth
+	if [ $(connmanctl technologies | grep -A 3 "/net/connman/technology/bluetooth" | tail -1 | sed 's/\s*Powered =\s*//') = "False" ]; then 
+    	connmanctl enable bluetooth
+	else
+    	connmanctl disable bluetooth
+	fi
+
+# reset language configuration
+super+o
+	setxkbmap -layout "us,ru" -option "grp:win_space_toggle"; \
+	notify-send -t 1000 'setxkbmap' 'Reset!'
+
+# restart dunst
+super+i
+	killall dunst; \
+	notify-send -t 1000 'dunst' 'Restarted!'
+
+# make sxhkd reload its configuration files:
+super+Escape
+    pkill -USR1 -x sxhkd; \
+    notify-send -t 1000 'sxhkd' 'Reloaded!'
