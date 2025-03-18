@@ -1,0 +1,8 @@
+set -g pane-border-style "fg=#ffffff"
+set -g pane-active-border-style "fg=#eeeeee"
+
+set -g message-style "bg=#eeeeee,fg=#222222,bold"
+set -g message-command-style "bg=#eeeeee,fg=#222222,bold"
+
+set -g status-style "bg=#eeeeee,fg=#222222,bold"
+set -g status-interval 1
