@@ -1,0 +1,4 @@
+#eval $(ssh-agent -s) > /dev/null
+
+printf "\n\n\n\n"
+neofetch
