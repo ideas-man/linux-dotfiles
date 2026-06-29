@@ -1,5 +1,5 @@
 # printscreen
-Print
+super+x
         maim -s | xclip -selection clipboard -t image/png
 
 # mute

@@ -39,6 +39,16 @@ fi
 
 sxhkd &
 
+blueman-applet &
+sleep 1 &
+pasystray &
+sleep 1 &
+gxkb &
+sleep 1 &
+solaar --window=hide &
+sleep 1 &
+librepods &
+
 while true
 do
 	VOL="VOL:$(pamixer --get-volume)"
