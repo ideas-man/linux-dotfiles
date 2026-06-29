@@ -115,6 +115,7 @@ stty -ixon -ixoff
 # spp prompt hook
 . /usr/share/spp/spp.zsh
 
+export SPP_PLUGINS="shell format fs git host"
 export SPP_EXPR='{?time {dim}[{time}] [{status}] [{exit}]{nl}{sep}{reset}{nl}}{white}{scwd:4} [{eperm}/{operm}]{reset}{? [{git}]}{nl}{magenta}{bold}{userhost} >:{reset} '
 
 # unfreeze terminal if left frozen
