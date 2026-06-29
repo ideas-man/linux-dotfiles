@@ -12,3 +12,5 @@ alias egrep='egrep --color=auto '
 
 alias x-start='startx "$XDOTDIR/.xinitrc" -- "$XDOTDIR/.xserverrc"'
 
+alias claude='~/.local/bin/claude'
+
