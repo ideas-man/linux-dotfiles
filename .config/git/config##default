@@ -2,3 +2,5 @@
 [user]
     email = ideasman.git@protonmail.com
     name = ideas-man
+[pull]
+	rebase = false
